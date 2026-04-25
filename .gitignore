@@ -1,0 +1,45 @@
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Bytecode y cachés de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Artefactos de empaquetado e instalación
+*.egg-info/
+*.egg
+build/
+dist/
+
+# Cachés de herramientas de testing y análisis
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Configuración local de editores
+.vscode/
+.idea/
+
+# Variables de entorno y secretos
+.env
+.env.local
+*.env
+
+# Datos descargados y artefactos pesados
+data/
+*.csv
+*.parquet
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
+
+# Sistema operativo
+Thumbs.db
+.DS_Store
