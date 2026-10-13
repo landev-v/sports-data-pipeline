@@ -1,6 +1,6 @@
 # sports-data-pipeline
 
-A modular Python pipeline for ingesting and analyzing sports data from multiple sources.
+A modular Python pipeline for ingesting and analyzing mlb data from multiple sources.
 
 > **Project status:** Early development (v0.1.0). Foundation and first fetcher in progress.
 
@@ -9,7 +9,6 @@ A modular Python pipeline for ingesting and analyzing sports data from multiple 
 - **Modular fetcher architecture**: abstract base class with concrete implementations for each data source.
 - **Type-safe and tested**: full type hints and unit tests from the first commit.
 - **Strict configuration**: centralized in `pyproject.toml` following modern Python packaging standards.
-- **Multi-sport support** _(planned)_: baseball (MLB) first, with soccer (La Liga, EPL) and other sports to follow.
 
 ## Requirements
 
