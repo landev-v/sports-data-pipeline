@@ -54,3 +54,7 @@ def era(er: int, outs: int) -> float | None:
         return None
     return (er * 27) / outs 
 
+def k_rate(so: int, tbf: int) -> float | None: 
+    if tbf == 0:
+        return None
+    return (so/ tbf)

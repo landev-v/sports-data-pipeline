@@ -17,3 +17,6 @@ def test_era() -> None:
 def test_era_null() -> None:
     assert era(5, 0) is None
 
+def test_k_rate() -> None:
+    assert k_rate(248, 746) == pytest.approx(0.3324, abs=0.00009)
+
