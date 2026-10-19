@@ -2,7 +2,7 @@
 
 A Python pipeline that pulls official data from the MLB Stats API and produces a descriptive report comparing a starting pitcher's performance across two seasons, normalized against the league average for starting pitchers.
 
-> **Project status:** early development (v0.1.0). The v1.0 scope is defined in [`docs/scope.md`](docs/scope.md) (in Spanish). Metric calculations are in progress.
+> **Project status:** early development (v0.1.0). The v1.0 scope is defined in [`docs/scope.md`](docs/scope.md). Metric calculations are in progress.
 
 ## What v1.0 will do
 
