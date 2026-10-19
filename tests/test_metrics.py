@@ -1,5 +1,5 @@
 import pytest 
-from sports_pipeline.metrics import ip_to_outs, era
+from sports_pipeline.metrics import ip_to_outs, era, k_rate
 
 def test_invalid_additional_outs() -> None:
     with pytest.raises(ValueError):
