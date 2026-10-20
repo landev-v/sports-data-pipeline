@@ -1,15 +1,19 @@
 # sports-data-pipeline
 
-A modular Python pipeline for ingesting and analyzing sports data from multiple sources.
+A Python pipeline that pulls official data from the MLB Stats API and produces a descriptive report comparing a starting pitcher's performance across two seasons, normalized against the league average for starting pitchers.
 
-> **Project status:** Early development (v0.1.0). Foundation and first fetcher in progress.
+> **Project status:** early development (v0.1.0). The v1.0 scope is defined in [`docs/scope.md`](docs/scope.md). Metric calculations are in progress.
 
-## Features
+## What v1.0 will do
 
-- **Modular fetcher architecture**: abstract base class with concrete implementations for each data source.
-- **Type-safe and tested**: full type hints and unit tests from the first commit.
-- **Strict configuration**: centralized in `pyproject.toml` following modern Python packaging standards.
-- **Multi-sport support** _(planned)_: baseball (MLB) first, with soccer (La Liga, EPL) and other sports to follow.
+Given a pitcher's MLB ID and two seasons, the program will report on the pitcher's starts only (relief appearances are excluded):
+
+- **Core metrics:** K%, BB%, K-BB% and HR/9, expressed as an index where 100 equals the league average for starting pitchers in each season, with a descriptor based on FanGraphs thresholds.
+- **Sample context:** starts, innings pitched and outs per start.
+- **Complementary metrics:** ERA, FIP, WHIP and BABIP as raw values.
+- **An interactive chart** comparing both seasons, also saved as a PNG image.
+
+The report describes what changed between seasons. It does not make predictions or judgments.
 
 ## Requirements
 
@@ -45,29 +49,7 @@ pip install -e ".[dev]"
 
 ## Usage
 
-_This section will be populated as features are implemented. The first fetcher (MLB Stats API) is currently under development._
-
-## Project structure
-
-```
-sports-data-pipeline/
-├── src/
-│   └── sports_pipeline/
-│       ├── __init__.py
-│       └── fetchers/
-│           ├── __init__.py
-│           ├── base.py        # Abstract BaseFetcher
-│           └── mlb.py         # MLB Stats API fetcher
-├── tests/
-│   ├── __init__.py
-│   └── fetchers/
-│       ├── __init__.py
-│       ├── test_base.py
-│       └── test_mlb.py
-├── .gitignore
-├── pyproject.toml
-└── README.md
-```
+_Not available yet. The command-line interface is planned for v1.0; see the [scope document](docs/scope.md) for details._
 
 ## Running tests
 
@@ -83,10 +65,18 @@ To check test coverage:
 pytest --cov=sports_pipeline --cov-report=term-missing
 ```
 
+Tests do not require an internet connection.
+
+## Development conventions
+
+- Type hints and Google-style docstrings throughout the code.
+- Tests written alongside each feature.
+- Commit messages follow [Conventional Commits](https://www.conventionalcommits.org/).
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## About this project
 
-This project is part of a structured learning effort focused on data pipelines, statistical modeling, and software architecture. It serves both as a technical exercise in building production-grade Python systems and as a foundation for sports analytics work. Contributions, feedback, and discussions are welcome.
+This project is part of a structured learning effort in data pipelines, software architecture and descriptive statistics, built around sports data I follow closely. Feedback and discussion are welcome.
